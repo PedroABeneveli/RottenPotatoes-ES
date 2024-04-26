@@ -6,10 +6,11 @@ Rails.application.routes.draw do
 
   get '/movies' => 'movies#index', :as => 'movies'
   get '/movies/:id/new' => 'movies#new', :as => 'new_movie'
-  post '/movies' => 'movies#create', :as => 'create_movie'
+  post '/movies' => 'movies#create', :as => 'movie'
   get '/movies/:id' => 'movies#show', :as => 'movie'
-  #get 'movies/:id/edit' => 'movies#edit', :as => 'edit_movie'
-  #put '/movies/:id' => 'movies#update', :as => 'movie'
+  get 'movies/:id/edit' => 'movies#edit', :as => 'edit_movie'
+  put '/movies/:id' => 'movies#update', :as => 'movie'
+  delete 'movies/:id' => 'movies#destroy', :as => 'movie'
 
   root 'movies#index'
 end

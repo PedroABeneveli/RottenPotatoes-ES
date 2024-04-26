@@ -28,5 +28,27 @@ class MoviesController < ApplicationController
     end
   end
 
+  def edit
+    @movie = Movie.find params[:id]
+  end
+
+  def update
+    params.require(:movie)
+    params[:movie].permit(:title, :rating, :release_date)
+
+    @movie = Movie.find params[:id]
+    if @movie.update_attributes(params[:movie])
+      redirect_to movie_path(@movie), :notice => "#{@movie.title} atualizado."
+    else
+      flash[:alert] = "#{@movie.title} não pode ser atualizado: " + @movie.errors.full_messages.join(",")
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @movie = Movie.find(params[:id])
+    @movie.destroy
+    redirect_to movies_path, :notice => "#{@movie.title} deletado."
+  end
 
 end
