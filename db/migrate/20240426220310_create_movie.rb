@@ -1,6 +1,6 @@
-class CreateMoviesTable < ActiveRecord::Migration[7.1]
+class CreateMovie < ActiveRecord::Migration[7.1]
   def change
-    create_table :movies_tables do |t|
+    create_table :movies do |t|
       # nome das colunas da tabela
       t.string 'title'
       t.string 'rating'

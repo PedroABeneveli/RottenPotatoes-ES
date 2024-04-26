@@ -2,7 +2,7 @@
 
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all?          # salva uma lista de todos os filmes em uma var de instancia que o view vai conseguir acessar
+    @movies = Movie.all          # salva uma lista de todos os filmes em uma var de instancia que o view vai conseguir acessar
   end
 
   def show
