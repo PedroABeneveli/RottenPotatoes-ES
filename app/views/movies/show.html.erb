@@ -1,10 +1,10 @@
 <%# codigo do view para a acao show, esse @movie eh a variavel de instancia do MoviesController %>
 
-<h1>Details about <%= @movie.title %></h1>
+<h1>Detalhes sobre <%= @movie.title %></h1>
 
 <div id="metadata">
   <ul id="details">
-    <li> Avaliação: <%= @movie.rating %> </li>
+    <li> Classificação: <%= @movie.rating %> </li>
     <li> Lançado em: <%= @movie.release_date.strftime('%F') %></li>
   </ul>
 </div>
@@ -15,4 +15,4 @@
 </div>
 
 <%#todo = link_to 'Editar esse filme', edit_movie_path(@movie), :class => 'btn' %>
-<%#todo = link_to 'Voltar a lista de filmes', movies_path, :class => 'btn btn-primary' %>
+<%#= link_to 'Voltar a lista de filmes', movies_path, :class => 'btn btn-primary' %>
