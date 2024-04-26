@@ -1,0 +1,18 @@
+<h1>Todos os Filmes</h1>
+
+<%# todo = link_to 'Adicionar Filme', new_movie_path, :class => 'btn btn-primary' %>
+
+<div id='movies'>
+  <div class="row">
+    <div class="col-8">Titulo</div>
+    <div class="col-2">Avaliação</div>
+    <div class="col-2">Lançamento</div>
+  </div>
+  <%- @movies.each do |movie| %>
+    <div class="row">
+      <div class="col-8"> <%= movie.title %>> <%# todo= link_to movie.title, movie_path(movie) %> </div>
+      <div class="col-2"> <%= movie.rating %> </div>
+      <div class="col-2"> <%= movie.release_date.strftime('%F') %> </div>
+    </div>
+  <% end %>
+</div>
