@@ -1,5 +1,5 @@
-<h2>Criar um Filme Novo</h2>
-<%= form_tag movie_path, :method => :put, :class => 'form' do %>
+<h2>Modificar um Filme</h2>
+<%= form_tag update_movie_path, :method => :put, :class => 'form' do %>
   <%= label :movie, :title, 'Nome', :class => 'form-control' %>
   <%= text_field :movie, :title, :class => 'form-control' %>
   <%= label :movie, :rating, 'Classificação', :class => 'form-control' %>

@@ -15,12 +15,8 @@ class MoviesController < ApplicationController
   end
 
   def create
-    # pelo que eu entendi essas linhas servem para tentar garantir que alguem nao mande dados proibidos pro model
-    params.require(:movie)
-    params[:movie].permit(:title, :rating, :release_date)
-
     # verifica se foi criado a instancia no BD e retorna um aviso
-    if (@movie = Movie.create(params[:movie]))
+    if (@movie = Movie.create(movie_params))
       redirect_to movies_path(@movie), :notice => "#{@movie.title} criado."
     else
       flash[:alert] = "Filme #{@movie.title} não pode ser criado: " + @movie.errors.full_messages.join(",")
@@ -33,11 +29,9 @@ class MoviesController < ApplicationController
   end
 
   def update
-    params.require(:movie)
-    params[:movie].permit(:title, :rating, :release_date)
-
     @movie = Movie.find params[:id]
-    if @movie.update_attributes(params[:movie])
+    aux = movie_params
+    if @movie.update_attributes(movie_params)
       redirect_to movie_path(@movie), :notice => "#{@movie.title} atualizado."
     else
       flash[:alert] = "#{@movie.title} não pode ser atualizado: " + @movie.errors.full_messages.join(",")
@@ -49,6 +43,12 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movie.destroy
     redirect_to movies_path, :notice => "#{@movie.title} deletado."
+  end
+
+  private
+  def movie_params
+    params.require(:movie)
+    params[:movie].permit(:title, :rating, :release_date)
   end
 
 end

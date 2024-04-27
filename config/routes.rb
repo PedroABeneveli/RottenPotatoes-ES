@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   # get "up" => "rails/health#show", as: :rails_health_check
 
   get '/movies' => 'movies#index', :as => 'movies'
-  get '/movies/:id/new' => 'movies#new', :as => 'new_movie'
-  post '/movies' => 'movies#create', :as => 'movie'
+  get '/movies/new' => 'movies#new', :as => 'new_movie'
+  post '/movies' => 'movies#create', :as => 'create_movies'
   get '/movies/:id' => 'movies#show', :as => 'movie'
   get 'movies/:id/edit' => 'movies#edit', :as => 'edit_movie'
-  put '/movies/:id' => 'movies#update', :as => 'movie'
-  delete 'movies/:id' => 'movies#destroy', :as => 'movie'
+  put '/movies/:id' => 'movies#update', :as => 'update_movie'
+  delete 'movies/:id' => 'movies#destroy', :as => 'destroy_movie'
 
   root 'movies#index'
 end
