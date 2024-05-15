@@ -1,24 +1,14 @@
-<%# honestamente entendi quase nada que ta acontecendo aqui %>
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RottenPotatoes</title>
-    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
-    <%# tive que comentar n sei pq = javascript_include_tag :application %>
+    <title>RottenPotatoesV2</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="container">
-      <%- if flash[:notice] %>
-      <div class="alert alert-info text-center"><%=flash[:notice] %></div>
-      <%- elsif flash[:alert] %>
-      <div class="alert alert-danger text-center"><%=flash[:alert] %></div>
-      <% end %>
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>

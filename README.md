@@ -1,17 +1,24 @@
-# RottenPotatoes
+# README
 
-Aluno:
-* Pedro Avila Beneveli
-* Matricula: 221001972
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Implementação seguindo o capítulo 4 do livro:
+Things you may want to cover:
 
-```Engineering Software as a Service: An Agile Approach Using Cloud Computing Second Edition, 2.0b7```
+* Ruby version
 
-Não foi possivel fazer funcionar todas as funções, especificamente as de Destroy e Update. Update teve problema pois a função utilizada no livro foi depreciada no rails utilizado, e não consegui encontrar uma outra forma de fazer a tempo. Já com o destroy, não consegui identificar o erro, mas acredito que ou está no view ou nos routes.
+* System dependencies
 
-Ferramentas utilizadas:
-* Rails 7.1.3.2
-* Ruby 2.7.8p225
-* Gem 3.1.6
-* IDE: RubyMine
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
